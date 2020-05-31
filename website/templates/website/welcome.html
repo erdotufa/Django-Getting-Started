@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+<h1>{% block title %}Welcome{% endblock %}</h1>
+{% block content %}
+<h1>Welcome to Django template</h1>
+<p>
+  {{message}} and {{x}}
+</p>
+<h2>Meetings</h2>
+<ul>
+  {% for meeting in meetings %}
+  <li>
+    <a href="{% url 'detail' meeting.id %}">
+      {{meeting.title}}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+<a href="{% url 'new' %}">Add new Meeting</a>
+
+<h2>Rooms</h2>
+<ul>
+  {% for room in rooms %}
+  <li>
+    <a href="{% url 'roomDetail' room.id %}">
+      {{room.name}}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

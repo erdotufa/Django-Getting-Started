@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+<h1>{% block title %}{{meeting.title}}{% endblock %}</h1>
+{% block content %}
+<h1>{{room.name}}</h1>
+
+<p>
+  {{room}}
+</p>
+
+{% endblock %}
